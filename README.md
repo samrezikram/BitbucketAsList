@@ -41,7 +41,7 @@ Install the dependencies
 
 | Results      |
 |------------|
-| <img src="https://github.com/samrezikram/BitbucketAsList/blob/master/Common/MemoryConsumption.png" width="750" height="220"> |
+| <img src="https://github.com/samrezikram/BitbucketAsList/blob/main/Common/MemoryConsumption.png" width="750" height="187"> |
 
 License
 MIT
