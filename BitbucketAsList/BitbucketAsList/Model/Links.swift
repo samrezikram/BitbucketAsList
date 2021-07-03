@@ -13,20 +13,17 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct Links : Codable {
-	let self : Self?
 	let html : Html?
 	let avatar : Avatar?
 
 	enum CodingKeys: String, CodingKey {
 
-		case self = "self"
-		case html = "html"
+        case html = "html"
 		case avatar = "avatar"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		self = try values.decodeIfPresent(Self.self, forKey: .self)
 		html = try values.decodeIfPresent(Html.self, forKey: .html)
 		avatar = try values.decodeIfPresent(Avatar.self, forKey: .avatar)
 	}

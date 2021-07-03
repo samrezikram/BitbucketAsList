@@ -9,20 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ReposotriesVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BitbucketAsList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ReposotriesVC" customModule="BitbucketAsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xyx-Ht-KuV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xyx-Ht-KuV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8iF-9k-NLe"/>
+                            <constraint firstAttribute="bottom" secondItem="xyx-Ht-KuV" secondAttribute="bottom" id="Er8-Hi-H3L"/>
+                            <constraint firstItem="xyx-Ht-KuV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hdQ-gf-LHr"/>
+                            <constraint firstItem="xyx-Ht-KuV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sYv-cU-EAl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ReposoitriesTableView" destination="xyx-Ht-KuV" id="kEd-NI-p5m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="57"/>
+            <point key="canvasLocation" x="18.840579710144929" y="56.919642857142854"/>
         </scene>
     </scenes>
     <resources>
