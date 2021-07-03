@@ -12,9 +12,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Json4Swift_Base : Codable {
+struct BitBucketRepository : Codable {
 	let pagelen : Int?
-	let values : [Values]?
+	let values : [Values]
 	let next : String?
 
 	enum CodingKeys: String, CodingKey {
@@ -25,10 +25,10 @@ struct Json4Swift_Base : Codable {
 	}
 
 	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		pagelen = try values.decodeIfPresent(Int.self, forKey: .pagelen)
-		values = try values.decodeIfPresent([Values].self, forKey: .values)
-		next = try values.decodeIfPresent(String.self, forKey: .next)
+		let data = try decoder.container(keyedBy: CodingKeys.self)
+		pagelen = try data.decodeIfPresent(Int.self, forKey: .pagelen)
+        values = try data.decodeIfPresent([Values].self, forKey: .values) ?? [Values].init()
+		next = try data.decodeIfPresent(String.self, forKey: .next)
 	}
 
 }
