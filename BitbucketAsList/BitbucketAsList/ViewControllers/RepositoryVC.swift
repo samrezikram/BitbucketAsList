@@ -7,7 +7,7 @@
 
 import UIKit
 class RepositoryVC: UIViewController, UISearchResultsUpdating {
-    
+        
     func updateSearchResults(for searchController: UISearchController) {
     
         self.dataSource.filteredTableData.removeAll(keepingCapacity: false)
