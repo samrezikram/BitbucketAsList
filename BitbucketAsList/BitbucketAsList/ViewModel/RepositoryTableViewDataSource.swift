@@ -1,14 +1,14 @@
 //
-//  NYTNewsTableViewDataSource.swift
-//  NYTimesHeadlines
+//  RepositoryTableViewDataSource.swift
+//  BitbucketAsList
 //
-//  Created by Samrez Ikram on 02/07/2021.
-//
+//  Created by Samrez Ikram on 03/07/2021.
+
 
 import Foundation
 import UIKit
 
-class NYTNewsTableViewDataSource<CELL : RepositoryTableViewCell, Values> : NSObject, UITableViewDataSource {
+class RepositoryTableViewDataSource<CELL : RepositoriesTableViewCell, Values> : NSObject, UITableViewDataSource {
     
     //Table View
     private var cellIdentifier : String!
