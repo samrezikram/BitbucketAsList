@@ -6,8 +6,6 @@
 
 import Foundation
 class APIService :  NSObject {
-    
-    
     private let sourcesURL = URL(string: "https://api.bitbucket.org/2.0/repositories")!;
     
     func getPublicReposotories(completion : @escaping (BitBucketRepository) -> ()){

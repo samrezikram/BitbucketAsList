@@ -36,12 +36,12 @@
 		ABF56F9D268F97B10078C52B /* RepositoryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56F9B268F97B10078C52B /* RepositoryTableViewDataSource.swift */; };
 		ABF56F9E268F97B10078C52B /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56F9C268F97B10078C52B /* RepositoryViewModel.swift */; };
 		ABF56FAA268F984A0078C52B /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56FA6268F984A0078C52B /* OfflineViewController.swift */; };
-		ABF56FAB268F984A0078C52B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56FA7268F984A0078C52B /* NetworkManager.swift */; };
 		ABF56FAC268F984A0078C52B /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56FA8268F984A0078C52B /* InternetConnectionManager.swift */; };
 		ABF56FAD268F984A0078C52B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56FA9268F984A0078C52B /* APIService.swift */; };
 		ABF56FD42690764D0078C52B /* RepositoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56FD02690764D0078C52B /* RepositoryVC.swift */; };
 		ABF56FD52690764D0078C52B /* RepositoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF56FD22690764D0078C52B /* RepositoriesTableViewCell.xib */; };
 		ABF56FD62690764D0078C52B /* RepositoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56FD32690764D0078C52B /* RepositoriesTableViewCell.swift */; };
+		ABF56FD9269087BD0078C52B /* UIImageViewAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF56FD8269087BD0078C52B /* UIImageViewAsync.swift */; };
 		DC0F0A65991749FB23F5A8FB /* Pods_BitbucketAsList_BitbucketAsListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33A5BB4022C1165B15FD0AA /* Pods_BitbucketAsList_BitbucketAsListUITests.framework */; };
 		EF5350B2F6E74B2451D19289 /* Pods_BitbucketAsListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD6B0CBB4E885A3E7D57D4D /* Pods_BitbucketAsListTests.framework */; };
 /* End PBXBuildFile section */
@@ -105,12 +105,12 @@
 		ABF56F9B268F97B10078C52B /* RepositoryTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewDataSource.swift; sourceTree = "<group>"; };
 		ABF56F9C268F97B10078C52B /* RepositoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		ABF56FA6268F984A0078C52B /* OfflineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
-		ABF56FA7268F984A0078C52B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		ABF56FA8268F984A0078C52B /* InternetConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
 		ABF56FA9268F984A0078C52B /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		ABF56FD02690764D0078C52B /* RepositoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryVC.swift; sourceTree = "<group>"; };
 		ABF56FD22690764D0078C52B /* RepositoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoriesTableViewCell.xib; sourceTree = "<group>"; };
 		ABF56FD32690764D0078C52B /* RepositoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewCell.swift; sourceTree = "<group>"; };
+		ABF56FD8269087BD0078C52B /* UIImageViewAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewAsync.swift; sourceTree = "<group>"; };
 		C6B3F2C7D77E2DB4C48F1234 /* Pods-BitbucketAsListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitbucketAsListTests.release.xcconfig"; path = "Target Support Files/Pods-BitbucketAsListTests/Pods-BitbucketAsListTests.release.xcconfig"; sourceTree = "<group>"; };
 		F33A5BB4022C1165B15FD0AA /* Pods_BitbucketAsList_BitbucketAsListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitbucketAsList_BitbucketAsListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,6 +191,7 @@
 		ABF56EF3268F13B10078C52B /* BitbucketAsList */ = {
 			isa = PBXGroup;
 			children = (
+				ABF56FD7269087AA0078C52B /* Utils */,
 				ABF56FD12690764D0078C52B /* RepositoriesTableViewCell */,
 				ABF56FCF2690764D0078C52B /* ViewControllers */,
 				ABF56FA4268F984A0078C52B /* WebService */,
@@ -271,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				ABF56FA6268F984A0078C52B /* OfflineViewController.swift */,
-				ABF56FA7268F984A0078C52B /* NetworkManager.swift */,
 				ABF56FA8268F984A0078C52B /* InternetConnectionManager.swift */,
 			);
 			path = NetworkManager;
@@ -292,6 +292,14 @@
 				ABF56FD32690764D0078C52B /* RepositoriesTableViewCell.swift */,
 			);
 			path = RepositoriesTableViewCell;
+			sourceTree = "<group>";
+		};
+		ABF56FD7269087AA0078C52B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ABF56FD8269087BD0078C52B /* UIImageViewAsync.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,6 +547,7 @@
 				ABF56F89268F8DB20078C52B /* Forks.swift in Sources */,
 				ABF56F8A268F8DB20078C52B /* Links.swift in Sources */,
 				ABF56F93268F8DB20078C52B /* Downloads.swift in Sources */,
+				ABF56FD9269087BD0078C52B /* UIImageViewAsync.swift in Sources */,
 				ABF56F97268F8DB20078C52B /* Values.swift in Sources */,
 				ABF56F96268F8DB20078C52B /* Hooks.swift in Sources */,
 				ABF56F90268F8DB20078C52B /* Project.swift in Sources */,
@@ -549,7 +558,6 @@
 				ABF56FD62690764D0078C52B /* RepositoriesTableViewCell.swift in Sources */,
 				ABF56F91268F8DB20078C52B /* Watchers.swift in Sources */,
 				ABF56F95268F8DB20078C52B /* Avatar.swift in Sources */,
-				ABF56FAB268F984A0078C52B /* NetworkManager.swift in Sources */,
 				ABF56F8B268F8DB20078C52B /* BitBucketRepository.swift in Sources */,
 				ABF56F98268F8DB20078C52B /* Owner.swift in Sources */,
 				ABF56FD42690764D0078C52B /* RepositoryVC.swift in Sources */,

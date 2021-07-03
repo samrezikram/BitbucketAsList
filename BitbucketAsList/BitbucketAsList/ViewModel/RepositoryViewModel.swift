@@ -4,8 +4,6 @@
 //
 //  Created by Samrez Ikram on 03/07/2021.
 
-
-
 import Foundation
 import ProgressHUD
 class RepositoryViewModel : NSObject {
@@ -16,16 +14,22 @@ class RepositoryViewModel : NSObject {
             self.bindnytNewsViewModelToController()
         }
     }
+    //--------------------------------
     
+    //--------------------
     var bindnytNewsViewModelToController : (() -> ()) = {}
-    
+    //--------------------
+
+    //--------------------------------
     override init() {
         super.init()
         self.apiService =  APIService()
-        callFuncToGetNYTNewsResults()
+        callFuncToGetBitBucketRepositories()
     }
+    //--------------------------------
     
-    func callFuncToGetNYTNewsResults() {
+    //--------------------------------
+    func callFuncToGetBitBucketRepositories() {
         ProgressHUD.show()
         
         self.apiService.getPublicReposotories { (publicRepo) in
@@ -33,5 +37,7 @@ class RepositoryViewModel : NSObject {
             ProgressHUD.dismiss()
         }
     }
+    //--------------------------------
+    //----------------------------------------------------------------
 }
 

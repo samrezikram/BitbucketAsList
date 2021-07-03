@@ -22,7 +22,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0y-t6-mLi">
                                 <rect key="frame" x="0.0" y="0.0" width="447" height="99"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Owner Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4c-0Z-zcm" userLabel="NewTitle" customClass="BTLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Owner Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4c-0Z-zcm" userLabel="NewTitle">
                                         <rect key="frame" x="100" y="8" width="339" height="23"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,7 +44,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2wp-dB-bX2">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyAvater" translatesAutoresizingMaskIntoConstraints="NO" id="2wp-dB-bX2" customClass="UIImageViewAsync" customModule="BitbucketAsList" customModuleProvider="target">
                                         <rect key="frame" x="8" y="9" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="80p-El-Ql4"/>
@@ -91,6 +91,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="ownerAvater" destination="2wp-dB-bX2" id="p4N-xI-MZh"/>
                 <outlet property="repositoriesCreationDdate" destination="3dK-lK-eoZ" id="qux-jO-uS2"/>
                 <outlet property="repositoriesOwnerTitleLabel" destination="G4c-0Z-zcm" id="Oam-c9-NhN"/>
                 <outlet property="repositoriesOwnerTypeLabel" destination="wrr-3h-Hv0" id="tOA-FG-Ccl"/>
@@ -98,4 +99,7 @@
             <point key="canvasLocation" x="174.63768115942031" y="378.01339285714283"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="emptyAvater" width="106" height="116"/>
+    </resources>
 </document>

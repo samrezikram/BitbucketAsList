@@ -11,11 +11,9 @@ class InternetConnectionManager: NSObject {
     
     static let sharedInstance: InternetConnectionManager = { return InternetConnectionManager() }()
     
-    
     override init() {
         super.init()
-
-
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(networkStatusChanged(_:)),
