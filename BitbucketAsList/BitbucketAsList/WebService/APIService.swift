@@ -1,13 +1,10 @@
 //
 //  APIService.swift
+//  BitbucketAsList
 //
-//  Created by Samrez Ikram on 02/05/21.
-//  Copyright © 2020 Abhilash Mathur. All rights reserved.
-//
+//  Created by Samrez Ikram on 03/07/2021.
 
 import Foundation
-
-
 class APIService :  NSObject {
     
     

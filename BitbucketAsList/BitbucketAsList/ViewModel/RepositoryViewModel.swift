@@ -1,18 +1,17 @@
+//
+//  RepositoryViewModel.swift
+//  BitbucketAsList
+//
+//  Created by Samrez Ikram on 03/07/2021.
 
-//
-//  NYTViewModel.swift
-//  NYTimesHeadlines
-//
-//  Created by Samrez Ikram on 02/05/2021.
-//
 
 
 import Foundation
 import ProgressHUD
-class NYTViewModel : NSObject {
+class RepositoryViewModel : NSObject {
     
     private var apiService : APIService!
-    private(set) var mostPopularNews : BitBucketRepository! {
+    private(set) var publicRepositories : BitBucketRepository! {
         didSet {
             self.bindnytNewsViewModelToController()
         }
@@ -29,8 +28,8 @@ class NYTViewModel : NSObject {
     func callFuncToGetNYTNewsResults() {
         ProgressHUD.show()
         
-        self.apiService.getPublicReposotories { (mostPopularNews) in
-            self.mostPopularNews = mostPopularNews
+        self.apiService.getPublicReposotories { (publicRepo) in
+            self.publicRepositories = publicRepo
             ProgressHUD.dismiss()
         }
     }

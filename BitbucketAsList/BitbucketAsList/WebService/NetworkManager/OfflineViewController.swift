@@ -1,9 +1,8 @@
 //
 //  OfflineViewController.swift
-//  ReposotriesVC
+//  BitbucketAsList
 //
-//  Created by Samrez Ikram on 02/05/21.
-//  Copyright © 2018 Samrez Ikram. All rights reserved.
+//  Created by Samrez Ikram on 03/07/2021.
 //
 import UIKit
 
