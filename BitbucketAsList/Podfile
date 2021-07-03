@@ -8,8 +8,6 @@ target 'BitbucketAsList' do
   # Pods for BitbucketAsList
   pod 'ProgressHUD'
   
-  # optional pods if you wanna go with almaofire approch
-  pod 'Alamofire', '~> 5.2'
   pod 'ReachabilitySwift'
 
   target 'BitbucketAsListTests' do

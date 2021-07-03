@@ -7,7 +7,7 @@
 
 import UIKit
 class RepositoryVC: UIViewController, UISearchResultsUpdating {
-    
+        
     func updateSearchResults(for searchController: UISearchController) {
     
         self.dataSource.filteredTableData.removeAll(keepingCapacity: false)
@@ -16,7 +16,7 @@ class RepositoryVC: UIViewController, UISearchResultsUpdating {
               return
         }
 
-        let array = self.nytNewsViewModel.publicRepositories.values.filter {
+        let array = self.repositoryViewModel.publicRepositories.values.filter {
             return $0.owner?.display_name?.lowercased().range(of: searchText.lowercased()) != nil
         }
 
@@ -26,9 +26,11 @@ class RepositoryVC: UIViewController, UISearchResultsUpdating {
     }
     
     
+    @IBOutlet weak var resizeHeight: NSLayoutConstraint!
+
     @IBOutlet weak var repositoryTableView: UITableView!
     
-    private var nytNewsViewModel : RepositoryViewModel!
+    private var repositoryViewModel : RepositoryViewModel!
     
     private var dataSource : RepositoryTableViewDataSource<RepositoriesTableViewCell, Values>!
     
@@ -51,32 +53,62 @@ class RepositoryVC: UIViewController, UISearchResultsUpdating {
         self.repositoryTableView.rowHeight = 120
 
         callToViewModelForUIUpdate()
+
+
     }
+    
+    
+    var keyboardOffset: CGFloat = 0 {
+        didSet {
+            self.resizeHeight.constant = -(self.keyboardOffset)
+
+            UIView.animate(withDuration: 0.2) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
     
     func callToViewModelForUIUpdate(){
         
-        self.nytNewsViewModel =  RepositoryViewModel()
-        self.nytNewsViewModel.bindnytNewsViewModelToController = {
+        self.repositoryViewModel =  RepositoryViewModel()
+        self.repositoryViewModel.bindnytNewsViewModelToController = {
             DispatchQueue.main.async {
                 self.updateDataSource()
                 self.updateSearch()
             }
         }
     }
-    
     func updateDataSource(){
-        self.dataSource = RepositoryTableViewDataSource(cellIdentifier: "RepositoriesTableViewCell", items: self.nytNewsViewModel.publicRepositories.values, configureCell: { (cell, repository) in
+        self.dataSource = RepositoryTableViewDataSource(cellIdentifier: "RepositoriesTableViewCell", items: self.repositoryViewModel.publicRepositories.values, configureCell: { (cell, repository) in
+            
             cell.repositoriesOwnerTitleLabel.text = repository.owner?.display_name
             cell.repositoriesOwnerTypeLabel.text = repository.owner?.type
             cell.repositoriesCreationDdate.text = repository.created_on
+
+            if ( NSString(string: repository.owner?.links?.avatar?.href ?? "").pathExtension == "png") {
+                if let url = URL(string: repository.owner?.links?.avatar?.href ?? "") {
+                    cell.ownerAvater.downloadImage(from: url)
+                } else {
+                    cell.ownerAvater.image = UIImage(named: "emptyAvater");
+                }
+            }
+            
+            if let next = self.repositoryViewModel.publicRepositories.next {
+                next.isEmpty ? self.renderNextButton(height: 0) :  self.renderNextButton(height: 100)
+            }
         })
-        
-        
-        
+
         DispatchQueue.main.async {
             self.repositoryTableView.dataSource = self.dataSource
             self.repositoryTableView.reloadData()
-//            self.refreshControl.endRefreshing()
+        }
+    }
+    
+    func renderNextButton(height: CGFloat){
+        self.resizeHeight.constant = height
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
         }
     }
     
